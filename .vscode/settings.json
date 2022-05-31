@@ -1,0 +1,60 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "uplatex",
+            "command": "uplatex",
+            "args": [
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-output-directory=dvi",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "%DIR%/dvi/%DOCFILE%.dvi"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-output-directory=dvi",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "tex2dvi2pdf",
+            "tools": [
+                "uplatex",
+                "uplatex",
+                "dvipdfmx"
+            ]
+        },
+        {
+            "name": "lualatex*2",
+            "tools": [
+                "lualatex",
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.backgroundColor": "#000000",
+    "python.formatting.provider": "black",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}

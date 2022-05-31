@@ -1,0 +1,9 @@
+verbatimEnvironments:
+    verbatim: 1
+    lstlisting: 1
+    minted: 1
+    myMinted: 1
+
+verbatimCommands:
+    verb: 1
+    lstinline: 1

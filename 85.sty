@@ -1,0 +1,91 @@
+\usepackage[utf8]{inputenc}
+
+\newcommand{\mageul}[1]{\color{magenta}{\underline{\textcolor{black}{#1}}}}
+
+\usepackage{layout}
+\usepackage{askmaps}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{url}
+\usepackage{framed}
+\usepackage{frame}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{mathtools,amssymb}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+\usepackage[section, outputdir=\detokenize{./dvi}]{minted}
+\usepackage{mdframed}
+\usepackage{multirow}
+\usepackage{braket}
+\usepackage{longtable}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage[left=1.00in, right=1.00in, top=1.00in, bottom=1.00in]{geometry}
+\usepackage[hypertexnames=false]{hyperref}
+\usepackage{cleveref}
+\usepackage{autonum}
+\usepackage{pxjahyper}
+
+% https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74
+\crefname{equation}{式}{式}
+\crefname{figure}{図}{図}
+\crefname{table}{表}{表}
+
+\renewcommand{\Re}[1]{\operatorname{Re}[{#1}]}
+\renewcommand{\Im}[1]{\operatorname{Im}[{#1}]}
+
+\newminted[myoctave]{octave}{
+    linenos,
+    breaklines,
+    mathescape,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm
+}
+\newmintedfile[myoctavefile]{octave}{
+    linenos,
+    breaklines,
+    mathescape,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm
+}
+\newminted[mytext]{text}{
+    linenos,
+    breaklines,
+    mathescape,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm
+}
+\newmintedfile[mytextfile]{text}{
+    linenos,
+    breaklines,
+    mathescape,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm
+}
+\newmintedfile[mycfile]{c}{
+    linenos,
+    breaklines,
+    mathescape,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm
+}
+
+
+\newcommand{\setmyheader}[1]{
+\makeatletter
+\def\@oddhead{#1 \hfil 000000　名前}% 奇数ページのフッターの中央にハイフンで挟んだノンブルを記載
+\def\@evenhead{#1 \hfil 000000　名前}% 奇数ページのフッターの中央にハイフンで挟んだノンブルを記載
+\makeatother
+}
+
+% Algorithmをアルゴリズムにする
+\makeatletter
+\renewcommand{\ALG@name}{アルゴリズム}
+\makeatother
