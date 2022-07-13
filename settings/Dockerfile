@@ -23,6 +23,8 @@ ENV LC_ALL en_US.UTF-8
 
 RUN pip install pygments
 
+RUN cpan YAML::Tiny File::HomeDir Unicode::GCString
+
 ADD ./settings/indentconfig.yaml /root/
 
 WORKDIR /root/donwload/
@@ -42,4 +44,3 @@ RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted m
 ENV PATH $PATH:/usr/local/texlive/2022/texmf-dist/scripts/latexindent/
 ENV PATH $PATH:/usr/local/texlive/2022/texmf-dist/scripts/latexindent/latexindent.pl
 
-RUN cpan YAML::Tiny File::HomeDir Unicode::GCString

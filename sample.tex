@@ -7,72 +7,72 @@
 
 \begin{section}{章}
 
-テスト。
+ テスト。
 
-\begin{subsection}{節}
-    \LaTeX が書けます。
-\end{subsection}
+ \begin{subsection}{節}
+     \LaTeX が書けます。
+ \end{subsection}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=5cm]{sample/sample.jpg}
-    % https://www.pexels.com/ja-jp/photo/2071873/
-    \caption{これはネコ}
-    \label{fig:cat}
-\end{figure}
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=5cm]{sample/sample.jpg}
+     % https://www.pexels.com/ja-jp/photo/2071873/
+     \caption{これはネコ}
+     \label{fig:cat}
+ \end{figure}
 
-\cref{fig:cat}のように引用できます。
+ \cref{fig:cat}のように引用できます。
 
-\begin{align}
-    a &= b \label{eq:siki1} \\
-    b &= c \label{eq:siki2}
-\end{align}
+ \begin{align}
+     a & = b \label{eq:siki1} \\
+     b & = c \label{eq:siki2}
+ \end{align}
 
-数式も\cref{eq:siki2}のように引用できます。
+ 数式も\cref{eq:siki2}のように引用できます。
 
-コードもこのように貼り付けられます。
+ コードもこのように貼り付けられます。
 
-\mycfile{sample/sample.c}
+ \mycfile{sample/sample.c}
 
-SI単位系がいい感じに書けます。$\SI{1.23e-4}{\micro \farad}$のように。
+ SI単位系がいい感じに書けます。$\SI{1.23e-4}{\micro \farad}$のように。
 
-\begin{figure}[H]
-    \begin{center}
-        \begin{circuitikz}[american currents]
-            \ctikzset{resistors/scale=0.8, capacitors/scale=0.7}
-            \draw
-            (0,2) node[anchor=east]{}
-            to[normal closed switch=$S_1$, o-] ++(1,0)
-            to[short, -] ++(1,0)
-            to[generic=$R$] ++(1,0)
-            to[short, -*, i^=$i$] ++(1,0)
-            to[C=$C$, -*] ++(0,-2)
-            to[short, -]++(-1,0)
-            to[short, -, i^=$i$] ++(-1,0)
-            to[short, -o]++(-2,0)
+ \begin{figure}[H]
+     \begin{center}
+         \begin{circuitikz}[american currents]
+             \ctikzset{resistors/scale=0.8, capacitors/scale=0.7}
+             \draw
+             (0,2) node[anchor=east]{}
+             to[normal closed switch=$S_1$, o-] ++(1,0)
+             to[short, -] ++(1,0)
+             to[generic=$R$] ++(1,0)
+             to[short, -*, i^=$i$] ++(1,0)
+             to[C=$C$, -*] ++(0,-2)
+             to[short, -]++(-1,0)
+             to[short, -, i^=$i$] ++(-1,0)
+             to[short, -o]++(-2,0)
 
-            (1,2)
-            to[normal open switch=$S_2$, *-*] ++(0,-2)
+             (1,2)
+             to[normal open switch=$S_2$, *-*] ++(0,-2)
 
-            (4,2)
-            to[short, -o] ++(1,0)
+             (4,2)
+             to[short, -o] ++(1,0)
 
-            (4,0)
-            to[short, -o] ++(1, 0)
+             (4,0)
+             to[short, -o] ++(1, 0)
 
-            (0,0)
-            to[open, v^=$V$]++(0,2)
+             (0,0)
+             to[open, v^=$V$]++(0,2)
 
-            (5,0)
-            to[open, v=$v_C$]++(0,2)
-            ;
-        \end{circuitikz}
-        \caption{RC直列回路}
-        \label{fig:RC1}
-    \end{center}
-\end{figure}
+             (5,0)
+             to[open, v=$v_C$]++(0,2)
+             ;
+         \end{circuitikz}
+         \caption{RC直列回路}
+         \label{fig:RC1}
+     \end{center}
+ \end{figure}
 
-回路も\cref{fig:RC1}のように書けます。めんどくさいです。
+ 回路も\cref{fig:RC1}のように書けます。めんどくさいです。
 
 \end{section}
 
