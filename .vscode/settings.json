@@ -1,0 +1,73 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "uplatex",
+            "command": "uplatex",
+            "args": [
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-output-directory=%WORKSPACE_FOLDER%/dvi",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "-o",
+                "%DOC%.pdf",
+                "%WORKSPACE_FOLDER%/dvi/%DOCFILE%.dvi"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-output-directory=%WORKSPACE_FOLDER%/dvi",
+                "%DOC_EXT%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "copy_pdf",
+            "command": "cp",
+            "args": [
+                "%WORKSPACE_FOLDER%/dvi/%DOCFILE%.pdf",
+                "%DOCFILE%.pdf"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "tex2dvi2pdf",
+            "tools": [
+                "uplatex",
+                "uplatex",
+                "dvipdfmx"
+            ]
+        },
+        {
+            "name": "lualatex*2",
+            "tools": [
+                "lualatex",
+                "lualatex",
+                "copy_pdf"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.color.light.backgroundColor": "#000000",
+    "latex-workshop.view.pdf.color.dark.backgroundColor": "#000000",
+    "python.formatting.provider": "black",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}

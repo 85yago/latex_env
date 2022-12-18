@@ -1,0 +1,8 @@
+verbatimEnvironments:
+    verbatim: 1
+    minted: 1
+    myMinted: 1
+    alltt: 1
+
+verbatimCommands:
+    verb: 1

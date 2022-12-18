@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tex2dvi2pdf",
+            "type": "shell",
+            "command": "uplatex -halt-on-error -interaction=nonstopmode -file-line-error -shell-escape -output-directory=dvi ${file} && uplatex -halt-on-error -interaction=nonstopmode -file-line-error -shell-escape -output-directory=dvi ${file} && dvipdfmx ./dvi/${fileBasenameNoExtension}.dvi",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "LuaLaTeX",
+            "type": "shell",
+            "command": "lualatex -halt-on-error -interaction=nonstopmode -file-line-error ${file} && uplatex -halt-on-error -interaction=nonstopmode -file-line-error ${file}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

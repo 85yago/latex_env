@@ -1,0 +1,108 @@
+\documentclass[uplatex, dvipdfmx]{jsarticle}
+\usepackage{85}
+
+\setmyheader{ヘッダー}
+
+\begin{document}
+
+\begin{section}{章}
+
+ テスト。
+
+ \begin{subsection}{節}
+     \LaTeX が書けます。
+ \end{subsection}
+
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=5cm]{sample/sample.jpg}
+     % https://www.pexels.com/ja-jp/photo/2071873/
+     \caption{これはネコ}
+     \label{fig:cat}
+ \end{figure}
+
+ \cref{fig:cat}のように引用できます。
+
+ \begin{align}
+     a & = b \label{eq:siki1} \\
+     b & = c \label{eq:siki2}
+ \end{align}
+
+ 数式も\cref{eq:siki2}のように引用できます。
+
+ コードもこのように貼り付けられます。
+
+ \mycfile{sample/sample.c}
+
+ SI単位系がいい感じに書けます。$\SI{1.23e-4}{\micro \farad}$のように。
+
+ この表のように揃えることもできます。\footnote{\href{https://uec.medit.link/latex/tablealign.html}{表の小数点揃え|実験AのためのLaTeX小技集}}
+
+ \begin{table}[H]
+     \centering
+     \caption{サイコロを振った結果($N=600$)}
+     \begin{tabular}{cS[table-format=3.0]cS[table-format=+1.1e+1]} \hline
+         目 & {回数$n$} & 割合$n/N$ & {理論値との差$(n/N - 1/6)$} \\ \hline
+         1 & 88      & 0.147   & -2.0e-2               \\
+         2 & 102     & 0.170   & 3e-3                  \\
+         3 & 84      & 0.140   & -2.7e-2               \\
+         4 & 114     & 0.190   & 2.3e-2                \\
+         5 & 109     & 0.182   & 1.5e-2                \\
+         6 & 103     & 0.172   & 5e-3                  \\ \hline
+     \end{tabular}
+ \end{table}
+
+ \sisetup{separate-uncertainty}
+ \begin{table}[H]
+     \centering
+     \caption{不確かさを揃える}
+     \begin{tabular}{cS[table-format=2.3,table-figures-uncertainty=1]} \hline
+           & {見出し}         \\ \hline
+         1 & 0.050+- 0.001 \\
+         2 & 0.50 +- 0.01  \\
+         3 & 5.0  +- 0.1   \\
+         4 & 50    +- 1    \\ \hline
+     \end{tabular}
+ \end{table}
+
+ \begin{figure}[H]
+     \begin{center}
+         \begin{circuitikz}[american currents]
+             \ctikzset{resistors/scale=0.8, capacitors/scale=0.7}
+             \draw
+             (0,2) node[anchor=east]{}
+             to[normal closed switch=$S_1$, o-] ++(1,0)
+             to[short, -] ++(1,0)
+             to[generic=$R$] ++(1,0)
+             to[short, -*, i^=$i$] ++(1,0)
+             to[C=$C$, -*] ++(0,-2)
+             to[short, -]++(-1,0)
+             to[short, -, i^=$i$] ++(-1,0)
+             to[short, -o]++(-2,0)
+
+             (1,2)
+             to[normal open switch=$S_2$, *-*] ++(0,-2)
+
+             (4,2)
+             to[short, -o] ++(1,0)
+
+             (4,0)
+             to[short, -o] ++(1, 0)
+
+             (0,0)
+             to[open, v^=$V$]++(0,2)
+
+             (5,0)
+             to[open, v=$v_C$]++(0,2)
+             ;
+         \end{circuitikz}
+         \caption{RC直列回路}
+         \label{fig:RC1}
+     \end{center}
+ \end{figure}
+
+ 回路も\cref{fig:RC1}のように書けます。めんどくさいです。
+
+\end{section}
+
+\end{document}
