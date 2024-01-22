@@ -45,5 +45,5 @@ RUN tlmgr update --self
 
 RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted mdframed multirow braket tcolorbox graphics algpseudocodex askmaps float fvextra etoolbox fancyvrb upquote lineno catchfile xstring zref needspace pgf environ everyhook svn-prov import latexindent newtx fontaxes xkeyval filehook type1cm fontspec bxpapersize circuitikz siunitx cleveref autonum etextools textpos mylatexformat pgfplots pxpgfmark
 
-ENV PATH $PATH:/usr/local/texlive/2024/texmf-dist/scripts/latexindent/
-ENV PATH $PATH:/usr/local/texlive/2024/texmf-dist/scripts/latexindent/latexindent.pl
+ENV PATH $PATH:/usr/local/texlive/2023/texmf-dist/scripts/latexindent/
+ENV PATH $PATH:/usr/local/texlive/2023/texmf-dist/scripts/latexindent/latexindent.pl
