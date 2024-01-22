@@ -68,6 +68,6 @@
     "latex-workshop.view.pdf.color.dark.backgroundColor": "#000000",
     "python.formatting.provider": "black",
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+        "source.organizeImports": "explicit"
     }
 }
