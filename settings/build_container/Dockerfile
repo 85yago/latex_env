@@ -1,4 +1,4 @@
-FROM python:3.13-slim-bookworm
+FROM python:3.14-slim-trixie
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
@@ -26,7 +26,8 @@ ENV LC_ALL=en_US.UTF-8
 
 ENV DISPLAY=host.docker.internal:0.0
 
-RUN pip install pygments
+# 多分mintedv3では勝手にインストールしてくれるのでいらないはず、要確認
+# RUN pip install pygments
 
 RUN cpan YAML::Tiny File::HomeDir Unicode::GCString
 
@@ -43,7 +44,7 @@ RUN curl -OL http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz 
 
 RUN tlmgr update --self
 
-RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted mdframed multirow braket tcolorbox graphics algpseudocodex askmaps float fvextra etoolbox fancyvrb upquote lineno catchfile xstring zref needspace pgf environ everyhook svn-prov import latexindent newtx fontaxes xkeyval filehook type1cm fontspec bxpapersize circuitikz siunitx cleveref autonum etextools textpos mylatexformat pgfplots pxpgfmark
+RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted mdframed multirow braket tcolorbox graphics algpseudocodex askmaps float fvextra etoolbox fancyvrb upquote lineno catchfile xstring zref needspace pgf environ everyhook svn-prov import latexindent newtx fontaxes xkeyval filehook type1cm fontspec bxpapersize circuitikz siunitx cleveref autonum etextools textpos mylatexformat pgfplots pxpgfmark threeparttable listings todonotes biblatex biblatex-ieee biber && tlmgr path add
 
 ENV PATH=$PATH:/usr/local/texlive/2025/texmf-dist/scripts/latexindent/
 ENV PATH=$PATH:/usr/local/texlive/2025/texmf-dist/scripts/latexindent/latexindent.pl
