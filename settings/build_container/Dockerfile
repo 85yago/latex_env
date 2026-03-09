@@ -44,7 +44,7 @@ RUN curl -OL http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz 
 
 RUN tlmgr update --self
 
-RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted mdframed multirow braket tcolorbox graphics algpseudocodex askmaps float fvextra etoolbox fancyvrb upquote lineno catchfile xstring zref needspace pgf environ everyhook svn-prov import latexindent newtx fontaxes xkeyval filehook type1cm fontspec bxpapersize circuitikz siunitx cleveref autonum etextools textpos mylatexformat pgfplots pxpgfmark threeparttable listings todonotes biblatex biblatex-ieee biber && tlmgr path add
+RUN tlmgr install pict2e framed frame algorithmicx algorithms mathtools minted mdframed multirow braket tcolorbox graphics algpseudocodex askmaps float fvextra etoolbox fancyvrb upquote lineno catchfile xstring zref needspace pgf environ everyhook svn-prov import latexindent newtx fontaxes xkeyval filehook type1cm fontspec bxpapersize circuitikz siunitx cleveref autonum etextools textpos mylatexformat pgfplots pxpgfmark threeparttable listings todonotes biblatex biblatex-ieee biber bxpdfver && tlmgr path add
 
-ENV PATH=$PATH:/usr/local/texlive/2025/texmf-dist/scripts/latexindent/
-ENV PATH=$PATH:/usr/local/texlive/2025/texmf-dist/scripts/latexindent/latexindent.pl
+ENV PATH=$PATH:/usr/local/texlive/2026/texmf-dist/scripts/latexindent/
+ENV PATH=$PATH:/usr/local/texlive/2026/texmf-dist/scripts/latexindent/latexindent.pl
